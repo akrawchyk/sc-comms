@@ -5,7 +5,7 @@ const config = require('./config')
 const url = require('url')
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'client.js'),
+  entry: path.join(__dirname, 'client', 'client.js'),
   output: {
     path: path.join(__dirname, 'public'),
     publicPath: url.parse(config.get('staticUrl')).path,
