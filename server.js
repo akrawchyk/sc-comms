@@ -1,10 +1,12 @@
+const os = require('os')
 const path = require('path')
 const SocketCluster = require('socketcluster').SocketCluster
+const config = require('./config')
 
 const socketCluster = new SocketCluster({
-  workers: 1,
+  workers: os.cpus().length || 1,
   brokers: 1,
-  port: 8000,
+  port: config.get('port')
   appName: 'app',
   wsEngine: 'uws',
   workerController: path.join(__dirname, '/worker.js'),

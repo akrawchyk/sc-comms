@@ -6,7 +6,7 @@ const routes = require('./routes/index')
 module.exports.run = function (worker) {
   console.log('   >> Worker PID:', process.pid)
 
-  const app = express()
+  const app = require('express')()
 
   // confiugure express
   app.set('x-powered-by', false)
