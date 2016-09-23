@@ -15,6 +15,7 @@ jobQueue.process((job, done) => {
   let count = 0
   const total = job.data.total
   const timer = setInterval(() => {
+    console.log(count)
     console.log(job.timestamp, ' progress ', Math.floor((count / total) * 100))
     job.progress(Math.floor((count / total) * 100))
     count++
@@ -23,7 +24,7 @@ jobQueue.process((job, done) => {
       clearInterval(timer)
       done()
     }
-  }, 100)
+  }, 1000)
 })
 
 jobQueue.on('active', (job, jobPromise) => {
@@ -42,6 +43,7 @@ jobQueue.on('completed', (job, result) => {
 
 jobQueue.on('failed', (job, err) => {
   console.error(`job ${job.timestamp} failed`, err.message)
+  messageQueue.add({ job: job.timestamp, status: 'failed' })
 })
 
 messageQueue.process((msg, done) => {
@@ -64,32 +66,47 @@ module.exports.run = function (worker) {
     // Some sample logic to show how to handle client events,
     // replace this with your own logic
     //
+    console.log('>> connection')
+
     const jInterval = setInterval(() => {
       jobQueue.add({
-        total: Math.floor(Math.random() * (10 - 1 + 1) + 1)
+        // total: Math.floor(Math.random() * (10 - 1 + 1) + 1)
+        total: 4
       })
     }, 1000)
 
-    socket.on('sampleClientEvent', function (data) {
-      count++
-      console.log('Handled sampleClientEvent', data)
-      scServer.exchange.publish('sample', count)
+    function emitJobStatus(socket, job, result) {
+      console.log('emit job status')
+      const message = {
+        job: job.timestamp
+      }
+
+      if (result.progress) {
+        message.progress = result.progress
+      }
+
+      if (result.status) {
+        message.status = result.status
+      }
+
+      // FIXME out of order progress events
+      socket.emit('job.message', message)
+    }
+
+    // socket.on('sampleClientEvent', function (data) {
+    //   count++
+    //   console.log('Handled sampleClientEvent', data)
+    //   scServer.exchange.publish('sample', count)
+    // })
+
+    messageQueue.on('completed', (job, result) => {
+      emitJobStatus(socket, job, result)
     })
-
-    const mInterval = setInterval(function () {
-      messageQueue.on('completed', (job, result) => {
-        // FIXME double send events
-        socket.emit('job.done', {
-          job: job.timestamp,
-          data: result
-        })
-      })
-    }, 1000)
 
     socket.on('disconnect', function () {
       console.log('disconnected')
+      messageQueue.removeListener(emitJobStatus)
       clearInterval(jInterval)
-      clearInterval(mInterval)
     })
   })
 }

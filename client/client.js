@@ -10,6 +10,20 @@ socket.emit('sampleClientEvent', {
 //   console.log(data)
 // })
 
-socket.on('job.done', (data) => {
-  console.log(data)
+socket.on('job.message', (data) => {
+  if (data.progress) {
+    console.log('progress', data.progress)
+  } else {
+    if (data.status === 'started') {
+      console.log('job.started', data)
+    }
+
+    if (data.status === 'complete') {
+      console.log('job.complete', data)
+    }
+
+    if (data.status === 'failed') {
+      console.log('job.failed', data)
+    }
+  }
 })
