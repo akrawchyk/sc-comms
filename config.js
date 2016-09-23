@@ -3,6 +3,18 @@ const os = require('os')
 const path = require('path')
 const convict = require('convict')
 
+convict.addFormat({
+  name: 'staticUrl',
+  validate: (val) => {
+    if (val[val.length - 1] !== '/') {
+      throw new Error('must end with `/`')
+    }
+  },
+  coerce: (val, config) => {
+    return val.replace(/\$\{([\w\.]+)}/g, function (v, m) { return config.get(m) })
+  }
+})
+
 const config = convict({
   env: {
     doc: 'The applicaton environment',
@@ -45,21 +57,25 @@ const config = convict({
     format: 'nat',
     default: 1000,
     env: 'SC_SOCKET_CHANNEL_LIMIT'
+  },
+  staticUrl: {
+    doc: 'The url that referrs to static assets',
+    format: 'staticUrl',
+    default: 'https://${httpHost}:${httpPort}/static/',  // eslint-disable-line
+    env: 'STATIC_URL'
   }
 })
 
+// check if config file exists before attempting to load it
 const configFile = path.join(__dirname, '.env.json')
-fs.open('myfile', 'r', (err, fd) => {
-  if (err) {
-    if (err.code === 'ENOENT') {
-      return
-    } else {
-      throw err
-    }
-  }
-
+try {
+  fs.openSync(configFile, fs.constants.O_RDONLY)
   config.loadFile(configFile)
-})
+} catch (err) {
+  if (err.code !== 'ENOENT') {
+    throw err
+  }
+}
 
 config.validate({ strict: true })
 

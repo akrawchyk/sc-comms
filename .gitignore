@@ -1,3 +1,6 @@
+# Env
+.env.json
+
 # Logs
 logs
 *.log

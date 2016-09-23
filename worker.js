@@ -1,22 +1,7 @@
-const express = require('express')
-const favicon = require('serve-favicon')
-const path = require('path')
-const routes = require('./routes/index')
+const app = require('./app')
 
 module.exports.run = function (worker) {
   console.log('   >> Worker PID:', process.pid)
-
-  const app = require('express')()
-
-  // confiugure express
-  app.set('x-powered-by', false)
-  app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
-  app.use(express.static(path.join(__dirname, 'public')))
-  app.set('views', path.join(__dirname, 'views'))
-  app.set('view engine', 'pug')
-
-  // setup routes
-  app.use('/', routes)
 
   const httpServer = worker.httpServer
   const scServer = worker.scServer

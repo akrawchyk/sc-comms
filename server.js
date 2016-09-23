@@ -64,8 +64,8 @@ jobQueue.process((job, done) => {
   }, 100)
 })
 
-setInterval(() => {
-  jobQueue.add({
-    total: Math.floor(Math.random() * (10 - 1 + 1) + 1)
-  })
-}, 1000)
+// setInterval(() => {
+//   jobQueue.add({
+//     total: Math.floor(Math.random() * (10 - 1 + 1) + 1)
+//   })
+// }, 1000)
