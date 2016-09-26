@@ -1,29 +1,10 @@
-import 'babel-polyfill'
 import socketCluster from 'socketcluster-client'
-// import './client.css'
+// import './client.css'  // FIXME
 
 const socket = socketCluster.connect()
-socket.emit('sampleClientEvent', {
-  message: 'This is an object with a message property' })
+const messagesEl = document.getElementById('messages')
 
-// socket.on('message', (data) => {
-//   console.log(data)
-// })
-
-socket.on('job.message', (data) => {
-  if (data.progress) {
-    console.log('progress', data.progress)
-  } else {
-    if (data.status === 'started') {
-      console.log('job.started', data)
-    }
-
-    if (data.status === 'complete') {
-      console.log('job.complete', data)
-    }
-
-    if (data.status === 'failed') {
-      console.log('job.failed', data)
-    }
-  }
+socket.on('job.message', (message) => {
+  const formattedMessage = `${JSON.stringify(message)}\n`
+  messagesEl.appendChild(new Text(formattedMessage))
 })

@@ -18,6 +18,7 @@ nunjucks.configure('views', {
 
 // confiugure express
 app.set('x-powered-by', false)
+app.locals.title = 'sc-comms'
 app.locals.static = (text) => {
   return `${config.get('staticUrl')}${text}`
 }
@@ -29,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 // setup routes
 app.use('/', routes)
-app.use('/jobs', jobs)
+app.use('/purify', jobs)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

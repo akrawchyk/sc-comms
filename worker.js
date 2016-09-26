@@ -14,29 +14,22 @@ module.exports.run = function (worker) {
   scServer.on('connection', function (socket) {
     console.log('>> connection')
 
-    function emitJobStatus (job, result) {
-      console.log('emit job status')
-      const message = {
-        job: job.timestamp
-      }
-
-      if (result.progress) {
-        message.progress = result.progress
-      }
-
-      if (result.status) {
-        message.status = result.status
-      }
-
-      // FIXME out of order progress events
+    function emitJobMessage (job, message) {
       socket.emit('job.message', message)
     }
 
-    jobs.messages.on('completed', emitJobStatus)
+    // TODO
+    //   * client requests job updates
+    //   * listen for job messages with jobId
+    //   * emit message if relevant
+    jobs.messages.process((message, done) => {
+      socket.emit('job.message', message.data)
+      done(null, message.data)
+    })
 
     socket.on('disconnect', function () {
-      console.log('disconnected')
-      jobs.messages.removeListener('completed', emitJobStatus)
+      console.log('>> disconnected')
+      jobs.messages.removeListener('completed', emitJobMessage)
     })
   })
 }

@@ -11,7 +11,6 @@ const socketCluster = new SocketCluster({
   appName: 'app',
   wsEngine: 'uws',
   workerController: path.join(__dirname, '/worker.js'),
-  brokerController: path.join(__dirname, '/broker.js'),
   socketChannelLimit: config.get('socketChannelLimit'),
   rebootWorkerOnCrash: true
   // clusterAuthKey: process.env.SCC_AUTH_KEY || null,

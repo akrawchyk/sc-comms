@@ -22,19 +22,20 @@
     "bull": "^1.0.0",
     "convict": "^1.4.0",
     "css-loader": "^0.25.0",
-    "express": "4.13.1",
+    "express": "^4.14.0",
     "node-uuid": "^1.4.7",
     "nunjucks": "^2.5.2",
+    "postcss-import": "^8.1.0",
     "postcss-loader": "^0.13.0",
-    "sc-cluster-broker-client": "1.x.x",
     "serve-favicon": "^2.3.0",
-    "socketcluster": "5.x.x",
-    "socketcluster-client": "5.x.x",
+    "socketcluster": "^5.0.16",
+    "socketcluster-client": "^5.0.12",
     "style-loader": "^0.13.1",
     "suitcss": "^2.0.0",
     "suitcss-preprocessor": "^2.0.0",
     "uws": "^0.9.0",
-    "webpack": "^2.1.0-beta.25"
+    "webpack": "^2.1.0-beta.25",
+    "whatwg-fetch": "^1.0.0"
   },
   "keywords": [
     "websocket",
@@ -45,6 +46,6 @@
   ],
   "readmeFilename": "README.md",
   "devDependencies": {
-    "webpack-dev-server": "webpack/webpack-dev-server#v2.1.0-beta.5"
+    "webpack-dev-server": "webpack/webpack-dev-server"
   }
 }

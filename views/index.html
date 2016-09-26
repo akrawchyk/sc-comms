@@ -5,7 +5,14 @@
 <p>Welcome to {{ title }}</p>
 
 <div id="app">
-    <form action="/jobs/purify" method="POST">
+    {% if errors.length %}
+    <div class="errors">
+        {% for error in errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <form action="/purify/new" method="POST">
         <input type="text" name="url" placeholder="Enter url to purify">
         <button type="submit">Purify!</button>
     </form>

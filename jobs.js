@@ -13,8 +13,6 @@ queue.process((job, done) => {
   let count = 0
   const total = job.data.total
   const timer = setInterval(() => {
-    console.log(count)
-    console.log(job.timestamp, ' progress ', Math.floor((count / total) * 100))
     job.progress(Math.floor((count / total) * 100))
     count++
 
@@ -26,32 +24,32 @@ queue.process((job, done) => {
 })
 
 queue.on('active', (job, jobPromise) => {
-  console.log('started job ', job.timestamp)
-  messages.add({ job: job.timestamp, status: 'started' })
+  console.log('started job ', job.jobId)
+  messages.add({ job: job.jobId, status: 'started' })
 })
 
 queue.on('progress', (job, progress) => {
-  messages.add({ job: job.timestamp, progress: progress })
+  console.log('job progress ', progress)
+  messages.add({ job: job.jobId, progress: progress })
 })
 
 queue.on('completed', (job, result) => {
-  console.log('completed job ', job.timestamp)
-  messages.add({ job: job.timestamp, status: 'complete' })
+  console.log('completed job ', job.jobId)
+  messages.add({ job: job.jobId, status: 'complete' })
 })
 
 queue.on('failed', (job, err) => {
-  console.error(`job ${job.timestamp} failed`, err.message)
-  messages.add({ job: job.timestamp, status: 'failed' })
+  console.error(`job ${job.jobId} failed`, err.message)
+  messages.add({ job: job.jobId, status: 'failed' })
 })
 
 // FIXME bull docs say use process to receive messages:
 //       https://github.com/OptimalBits/bull#message-queue
 //       setup pub/sub or middleware to this function
-//       although, currently listening to 'completed' event isn't so bad...
-messages.process((msg, done) => {
-  console.log('received message ', msg.data)
-  done(null, msg.data)
-})
+// messages.process((msg, done) => {
+//   // console.log('received message ', msg.data)
+//   done(null, msg.data)
+// })
 
 module.exports = {
   queue,
