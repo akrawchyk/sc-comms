@@ -1,8 +1,8 @@
 const path = require('path')
-const url = require('url')
 const express = require('express')
 const nunjucks = require('nunjucks')
 const favicon = require('serve-favicon')
+const bodyParser = require('body-parser')
 const routes = require('./routes/index')
 const config = require('./config')
 
@@ -23,6 +23,7 @@ app.locals.static = (text) => {
 
 // setup middlewares
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, 'public')))
 
 // setup routes

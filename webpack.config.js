@@ -16,7 +16,7 @@ module.exports = {
       staticUrl: config.get('staticUrl')
     }),
     new webpack.LoaderOptionsPlugin({
-      test: /\.css$/, // may apply this only for some modules
+      test: /\.css$/,
       options: {
         postcss () {
           return [suitcss]

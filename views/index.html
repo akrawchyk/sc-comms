@@ -5,8 +5,9 @@
 <p>Welcome to {{ title }}</p>
 
 <div id="app">
+    <form action="/purify" method="POST">
+        <input type="text" name="purify" placeholder="Enter url to purify">
+        <button type="submit">Purify!</button>
+    </form>
 </div>
-{% endblock %}
-
-{% block javascripts %}
 {% endblock %}

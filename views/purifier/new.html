@@ -1,0 +1,10 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+{% if job %}
+Created job {{ job }}
+{% else %}
+Failed to create job:
+<pre>{{ error }}</pre>
+{% endif %}
+{% endblock %}
