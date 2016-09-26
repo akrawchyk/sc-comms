@@ -1,20 +1,31 @@
-const suitcss = require('suitcss-preprocessor')
 const path = require('path')
+const suitcss = require('suitcss-preprocessor')
 const webpack = require('webpack')
+const config = require('./config')
+const url = require('url')
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'client.js'),
+  entry: [
+    'whatwg-fetch',
+    path.join(__dirname, 'client', 'client.js')
+  ],
   output: {
     path: path.join(__dirname, 'public'),
-    publicPath: '/static/',
+    publicPath: url.parse(config.get('staticUrl')).path,
     filename: 'client.bundle.js'
   },
+  resolve: {
+    extensions: ['.js', '.css']
+  },
   plugins: [
+    new webpack.DefinePlugin({
+      staticUrl: config.get('staticUrl')
+    }),
     new webpack.LoaderOptionsPlugin({
-      test: /\.css$/, // may apply this only for some modules
+      test: /\.css$/,
       options: {
-        postcss () {
-          return [suitcss]
+        postcss: {
+          plugins: [suitcss()]
         }
       }
     })
@@ -24,12 +35,12 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel'
       },
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        loader: 'style-loader!css-loader!postcss-loader'
+        loader: 'style!css!postcss'
       }
     ]
   }

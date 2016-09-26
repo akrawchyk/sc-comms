@@ -1,0 +1,16 @@
+{% extends '_layout.html' %}
+
+{% block content %}
+{% if jobId %}
+Created job {{ jobId }}
+<pre id="messages"></pre>
+{% else %}
+No job found:
+<pre>{{ error }}</pre>
+{% endif %}
+{% endblock %}
+
+
+{% block javascripts %}
+<script src="{{ static('client.bundle.js') }}" async defer></script>
+{% endblock %}

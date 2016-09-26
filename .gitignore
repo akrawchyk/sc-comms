@@ -1,3 +1,9 @@
+# Env
+.env.json
+
+# Redis
+*.rdb
+
 # Logs
 logs
 *.log
