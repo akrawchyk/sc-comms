@@ -20,7 +20,7 @@ router.post('/purify', (req, res, next) => {
     return res.sendStatus(400)
   }
 
-  if (!urlObj.protocl) {
+  if (!urlObj.protcol) {
     // assuming https
     urlObj.protocol = 'https:'
   }
