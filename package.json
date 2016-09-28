@@ -1,13 +1,12 @@
 {
-  "name": "socketcluster-sample",
-  "description": "A sample SocketCluster app",
-  "version": "1.0.0",
-  "contributors": [
-    {
-      "name": "Jonathan Gros-Dubois",
-      "email": "grosjona@yahoo.com.au"
-    }
-  ],
+  "name": "sc-comms",
+  "author": {
+    "name": "Andrew Krawchyk",
+    "email": "akrawchyk@gmail.com"
+  },
+  "description": "experiment",
+  "version": "0.0.1",
+  "license": "MIT",
   "scripts": {
     "clean": "rm -f public/*.js",
     "webpack": "npm run clean && webpack",
@@ -22,11 +21,15 @@
     "bull": "^1.0.0",
     "convict": "^1.4.0",
     "css-loader": "^0.25.0",
+    "debug": "^2.2.0",
     "express": "^4.14.0",
+    "lodash": "^4.16.2",
     "node-uuid": "^1.4.7",
     "nunjucks": "^2.5.2",
-    "postcss-import": "^8.1.0",
+    "parse5": "^2.2.1",
+    "postcss-import": "8.1.0",
     "postcss-loader": "^0.13.0",
+    "purify-css": "^1.1.9",
     "serve-favicon": "^2.3.0",
     "socketcluster": "^5.0.16",
     "socketcluster-client": "^5.0.12",
@@ -37,14 +40,6 @@
     "webpack": "^2.1.0-beta.25",
     "whatwg-fetch": "^1.0.0"
   },
-  "keywords": [
-    "websocket",
-    "server",
-    "realtime",
-    "cluster",
-    "scalable"
-  ],
-  "readmeFilename": "README.md",
   "devDependencies": {
     "webpack-dev-server": "webpack/webpack-dev-server"
   }

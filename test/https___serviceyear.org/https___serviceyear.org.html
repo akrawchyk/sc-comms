@@ -1,0 +1,1607 @@
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+    <head  prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+        
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XAYBVFFTGwQCV1dQAAI="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),s.on(m,function(){this.bstStart=Date.now()}),s.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,!1),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(17)(a),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on(d+"-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;c<s;c++)a[c].apply(i,r);var u=f[w[n]];return u&&u.push([v,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",w[n]=e,e in f||(f[e]=[])})}var m={},w={},v={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return v}function i(){return new r}var a="nr@context",s=t("gos"),c=t(15),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!g++){var t=y.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(w,function(e,n){t[e]||(t[e]=n)});var n="https"===m.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(15),f=window,u=f.document,d="addEventListener",l="attachEvent",p=f.XMLHttpRequest,h=p&&p.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:p,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(12);var m=""+location,w={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},v=p&&h&&h[d]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:m,features:{},xhrWrappable:v};u[d]?(u[d]("DOMContentLoaded",i,!1),f[d]("load",r,!1)):(u[l]("onreadystatechange",o),f[l]("onload",r)),s("mark",["firstbyte",a()],null,"api");var g=0},{}]},{},["loader",2,10,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"8514d96fe0","agent":"","transactionName":"YQMEZBYADBJYBxUPWlhJIEUKAhYIVgpOBVpEA0hGDQQVEgMsDgtQYA8DR0oGBxU=","applicationID":"7236273","errorBeacon":"bam.nr-data.net","applicationTime":76}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    
+        <title>Service Year: A Better You. A Greater Us.</title>
+        <meta property="og:title" content="Service Year: A Better You. A Greater Us.">
+    
+    <meta name="description" content="A service year is a full-time, paid position where you can develop your skills and build change from the ground up.">
+    
+    
+    
+    <meta property="og:image" content="https://static.serviceyear.org/static/images/social/share-facebook.c7977e76f99a.jpg"> <meta itemprop="image" content="https://static.serviceyear.org/static/images/social/share-google.8bb216215048.jpg"> <meta name="twitter:image" content="https://static.serviceyear.org/static/images/social/share-twitter.d6bf6d728fa7.jpg">
+    
+        <meta property="og:url" content="https://serviceyear.org/">
+        <meta property="og:description" content="A service year is a full-time, paid position where you can develop your skills and build change from the ground up.">
+        
+        <meta property="og:site_name" content="Service Year">
+        <meta property="og:locale" content="en_US">
+    
+    
+        <meta name="twitter:title" content="Service Year: A Better You. A Greater Us.">
+        <meta name="twitter:url" content="https://serviceyear.org/">
+        <meta name="twitter:description" content="A service year is a full-time, paid position where you can develop your skills and build change from the ground up.">
+        <meta name="twitter:site" content="@serviceyr">
+        
+        <meta name="twitter:card" content="summary_large_image">
+    
+    
+        <meta name="fb:app_id" content="552690178201374">
+    
+    
+        <meta itemprop="name" content="Service Year: A Better You. A Greater Us.">
+        <meta itemprop="url" content="https://serviceyear.org/">
+        <meta itemprop="description" content="A service year is a full-time, paid position where you can develop your skills and build change from the ground up.">
+    
+
+
+
+
+        
+        
+        <script id="test-optimizely" src="https://cdn.optimizely.com/js/5336301664.js"></script>
+        
+
+        <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="https://static.serviceyear.org/static/css/vendor_v2.81c54ba80dd8.css">
+        <link rel="stylesheet" href="https://static.serviceyear.org/static/css/app_v2.119b09628c10.css">
+        
+
+        <script src="https://static.serviceyear.org/static/js/vendor/modernizr.19bcc5655109.js"></script>
+    </head>
+    <body class="">
+        <!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WGN697"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGN697');</script>
+<!-- End Google Tag Manager -->
+
+
+        
+
+
+
+
+<div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+        
+
+
+<nav class="tab-bar show-for-small-only">
+    <section class="left-small">
+        <a class="left-off-canvas-toggle menu-icon icon-menu">
+            <span class="show-for-sr">Menu</span>
+        </a>
+    </section>
+    <section class="middle tab-bar-section">
+        <h1 class="title">
+            <a class="navigation__brand" href="/">
+                <span class="show-for-sr">Service Year</span>
+            </a>
+        </h1>
+    </section>
+    <section class="right-small">
+        <a class="right-off-canvas-toggle menu-icon icon-menu-user"> <span class="show-for-sr">User</span>
+        </a>
+    </section>
+</nav>
+<aside class="left-off-canvas-menu">
+    <ul class="off-canvas-list">
+        
+        <li>
+            <div class="search-mobile">
+                <form id="search-form-mobile" action="/search/" method="post" class="search-mobile__form">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='2MpXR9mWrNf89YnUObjEjNGtU3GitVNo' />
+                    <input class="search__input icon icon-close" id="id_q" name="q" placeholder="Search Service Year" type="search" />
+                    <button class="button search-mobile__button" type="submit"><span class="icon icon-search"></span></button>
+                    <input id="id_per_page" name="per_page" type="hidden" value="10" />
+                </form>
+            </div>
+        </li>
+        
+        <li>
+            <a class="navigation__link"
+                href="/about/">
+                About
+            </a>
+        </li>
+        <li>
+            <a class="navigation__link" href="/serving/">
+                Serve
+            </a>
+        </li>
+        <li>
+            <a class="navigation__link" href="/hosting/">
+                Host
+            </a>
+        </li>
+        <li>
+            <div class="search-mobile__horiz-separator"/>
+        </li>
+        <li>
+            <a class="search-mobile__facet-link" href="/search/listings/">
+                <img class="search-mobile__facet-icon" src="https://static.serviceyear.org/static/images/icons/icon-listing_small.f67311d78e8d.gif" alt="">Listings
+            </a>
+        </li>
+        <li>
+            <a class="search-mobile__facet-link" href="/search/organizations/">
+                <img class="search-mobile__facet-icon" src="https://static.serviceyear.org/static/images/icons/icon-organization_small.60fc99fa8025.gif" alt="">Organizations
+            </a>
+        </li>
+        <li>
+            <a class="search-mobile__facet-link" href="/search/corps-members/">
+                <img class="search-mobile__facet-icon" src="https://static.serviceyear.org/static/images/icons/icon-corps-member_small.d774525072f4.gif" alt="">Corps Members
+            </a>
+        </li>
+    </ul>
+</aside>
+<aside class="right-off-canvas-menu">
+    
+    <div class="user-info">
+        <div class="user-info__heading">Your Account</div>
+    </div>
+    <ul class="off-canvas-list">
+        <li><a class="navigation__link" href="/register-corps-member/">Join</a></li>
+        <li><a class="navigation__link" href="/login/?next=%2F">Login</a></li>
+    </ul>
+     
+
+
+
+</aside>
+
+
+        <section class="main-section">
+            
+            
+
+
+<nav class="navigation hide-for-print hide-for-small-only">
+
+    <div class="navigation__menu">
+        <a class="navigation__brand" href="/">
+            <span class="show-for-sr">Service Year</span>
+        </a>
+
+        <a class="navigation__link"
+            href="/serving/">
+            Serve
+        </a>
+
+        <a class="navigation__link"
+            href="/hosting/">
+            Host
+        </a>
+
+        <a class="navigation__link"
+            href="/about/">
+            About
+        </a>
+
+        <span class="navigation__separator"></span>
+
+        <a class="navigation__link navigation__dropdown" href="/browse-service-year/" id="js-open-drawer">Browse</a>
+    </div>
+
+    
+        <div class="navigation__actions">
+            <a class="navigation__link test-user-login" href="/login/?next=%2F">
+                Login
+            </a>
+            <a class="navigation__link navigation__register test-user-register" href="/register-corps-member/">
+                <span class="button button--secondary">Join</span>
+            </a>
+        </div>
+    
+
+    
+    <div class="search hide-for-small-only hide-for-print">
+        <div class="search__fields">
+            <form id="search-form" class="search__form" action="/search/" method="post">
+                <input type='hidden' name='csrfmiddlewaretoken' value='2MpXR9mWrNf89YnUObjEjNGtU3GitVNo' />
+                <select id="id_doc" name="doc">
+<option value="" selected="selected">All</option>
+<option value="listings">Listings</option>
+<option value="positions">Positions</option>
+<option value="organizations">Organizations</option>
+<option value="corps-members">Corps Members</option>
+<option value="networks">Networks</option>
+</select>
+                <input class="search__input icon icon-close" id="id_q" name="q" placeholder="Search Service Year" type="search" />
+                <div class="search__icon hidden-for-js">
+                    <a href="" class="icon icon-close" rel="nofollow"></a>
+                </div>
+                <button class="button search__button postfix" type="submit">
+                    <span class="show-for-sr">Search</span>
+                    <span class="icon icon-search"></span>
+                </button>
+                <input id="id_per_page" name="per_page" type="hidden" value="10" />
+            </form>
+        </div>
+    </div>
+    
+</nav>
+
+<div class="navigation__drawer hide-for-print ">
+    <div class="nav-drawer__inner">
+        <div class="row">
+
+            <div class="large-4 columns">
+                <a href="/search/listings/" class="nav-drawer__item">
+                    <img class="drawer-item__icon" src="https://static.serviceyear.org/static/images/icons/icon-listing.f77f25b57ec9.svg" alt="">
+                    <p class="drawer-item__label">Listings</p>
+                    <div class="drawer-item__body">
+                        <p>Find actively recruiting service year<br class="hide-for-medium">opportunities that match your goals.</p>
+                    </div>
+                    <p class="drawer-item__cta">View <span class="hide-for-medium">listings</span> &rarr;</p>
+                </a>
+            </div>
+
+            <div class="large-4 columns">
+                <a href="/search/organizations/" class="nav-drawer__item">
+                    <img class="drawer-item__icon" src="https://static.serviceyear.org/static/images/icons/icon-organization.13ca7b27f0d3.svg" alt="">
+                    <p class="drawer-item__label">Organizations</p>
+                    <div class="drawer-item__body">
+                        <p>Learn about the organizations<br class="hide-for-medium">where you can serve.</p>
+                    </div>
+                    <p class="drawer-item__cta">View <span class="hide-for-medium">Organizations</span> &rarr;</p>
+                </a>
+            </div>
+
+            <div class="large-4 columns">
+                <a href="/search/corps-members/" class="nav-drawer__item">
+                    <img class="drawer-item__icon" src="https://static.serviceyear.org/static/images/icons/icon-corps-member.5d26c4b2c2d6.svg" alt="">
+                    <p class="drawer-item__label">Corps Members</p>
+                    <div class="drawer-item__body">
+                        <p>Connect with the people who are<br class="hide-for-medium">serving or are interested in a service year.</p>
+                    </div>
+                    <p class="drawer-item__cta">View <span class="hide-for-medium">Corps Members</span> &rarr;</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="nav-drawer__overlay"></div>
+</div>
+
+            
+<header class="hero hero--last-paradise" role="banner"
+        data-interchange="[https://d4u83ieo3jbjg.cloudfront.net/media/heros/home-small.jpg, (small)],
+            [https://d4u83ieo3jbjg.cloudfront.net/media/heros/home-medium.jpg, (medium)],
+            [https://d4u83ieo3jbjg.cloudfront.net/media/heros/home-large.jpg, (large)]">
+    
+    <div class="flex-video widescreen vimeo">
+        <video src="https://player.vimeo.com/external/179060077.hd.mp4?s=2a30181fe25907cc5cc4e217203c080b3049a3c8&amp;profile_id=119" autoplay loop muted volume="0"></video>
+    </div>
+    
+
+    <div class="hero__content antialiased">
+        <div class="row">
+            <div class="columns medium-9 large-7 medium-centered">
+                
+                <h1 class="hero__heading text-center">
+                    A Better You.<br />A Greater Us.
+                </h1>
+                
+                <p class="hero__subheading text-center">
+                    A service year is a full-time, paid position where you can develop your skills and build change from the ground up.
+                </p>
+                
+            </div>
+        </div>
+
+        
+        <form class="" action="/search/" method="post">
+            <input type='hidden' name='csrfmiddlewaretoken' value='2MpXR9mWrNf89YnUObjEjNGtU3GitVNo' />
+            <div class="discovery-bar">
+                <div class="discovery-bar__inner">
+                    <div class="discovery-bar__heading show-for-small-only">Find Opportunities <span class="discovery-bar__dismiss js-dismiss-discovery">&times;</span></div>
+                    <input id="id_doc" name="doc" type="hidden" value="listings" />
+                    <input id="id_per_page" name="per_page" type="hidden" value="10" />
+                    <input id="id_latitude" name="latitude" type="hidden" />
+                    <input id="id_longitude" name="longitude" type="hidden" />
+                    <input id="id_distance" name="distance" type="hidden" value="40" />
+                    <div class="discovery-bar__input">
+                        <label>What are you interested in?</label>
+                        <select class="db-curve-left" id="id_focus_areas" name="focus_areas">
+<option value="" selected="selected">Choose Your Focus Area</option>
+<option value="education-youth">Education &amp; Youth</option>
+<option value="aging">Aging</option>
+<option value="animals">Animals</option>
+<option value="arts-culture">Arts/Culture</option>
+<option value="disability">Disability</option>
+<option value="disaster">Disaster</option>
+<option value="environment">Environment</option>
+<option value="health">Health</option>
+<option value="non-profit-capacity">Non-Profit Capacity</option>
+<option value="opportunity">Opportunity</option>
+<option value="public-safety">Public Safety</option>
+<option value="veterans">Veterans</option>
+</select>
+                    </div>
+                    <div class="discovery-bar__input">
+                        <label>Where do you want to go?</label>
+                        <div class="discovery-bar-input__location">
+                            <input class="geo-input db-curve-center" id="id_location" name="location" placeholder="Any Location" type="text" />
+                            <span class="icon icon-pointer"></span>
+                        </div>
+                    </div>
+                    <div id="listing-response"></div>
+                    <div class="discovery-bar__submit">
+                        <button class="db-curve-right button button--secondary">Find your opportunity</button>
+                    </div>
+                </div>
+            </div>
+            <div class="hide-for-medium-up text-center">
+                <button class="button button--secondary mb0 js-show-discovery">Find your opportunity</button>
+            </div>
+        </form>
+    
+    </div>
+</header>
+
+            
+
+            <main role="main">
+                
+
+
+
+<section class="feature feature--secondary" id="sy-collections">
+    <div class="row">
+        <div class="columns mb2">
+            <h2 class="text-center">
+    Find Opportunities
+
+</h2>
+            <p class="text-center mb0"></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="columns medium-11 medium-centered large-10">
+            <div class="flex-slider js-featured-collections-slider">
+                
+                <div class="flex-card">
+                    <div class="flex-card__inner">
+                        
+                        <noscript>
+                            <a class="flex-card__header" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/opportunity-types;americorps/" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-1.png)"></a>
+                        </noscript>
+                        <a class="flex-card__header lazyload" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/opportunity-types;americorps/" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-1.png"></a>
+                        
+                        <div class="flex-card__description">
+                            <h3 class="flex-card__heading">
+                                <a href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/opportunity-types;americorps/">Earn an AmeriCorps Education Award</a>
+                            </h3>
+                            <p class="flex-card__text">Are you interested in a scholarship for college, or help with your student loans? Explore opportunities that come with the benefit of Segal AmeriCorps Education Awards that can be used to further your education, or payoff college loans.</p>
+                            
+                            <a class="flex-card__link" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/opportunity-types;americorps/">See More &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-card">
+                    <div class="flex-card__inner">
+                        
+                        <noscript>
+                            <a class="flex-card__header" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/keywords;NCCC/" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-2.png)"></a>
+                        </noscript>
+                        <a class="flex-card__header lazyload" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/keywords;NCCC/" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-2.png"></a>
+                        
+                        <div class="flex-card__description">
+                            <h3 class="flex-card__heading">
+                                <a href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/keywords;NCCC/">Serve with FEMA Corps and NCCC</a>
+                            </h3>
+                            <p class="flex-card__text">Want to travel the country with a team for 10 months, tackling a variety of intense, multi-week projects? Check out the highly adventurous positions with AmeriCorps NCCC (National Civilian Community Corps) and FEMA Corps.</p>
+                            
+                            <a class="flex-card__link" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/keywords;NCCC/">See More &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-card">
+                    <div class="flex-card__inner">
+                        
+                        <noscript>
+                            <a class="flex-card__header" href="https://serviceyear.org/search/listings/focus-areas;education-youth/recruitment-statuses;actively-recruiting/" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-3.png)"></a>
+                        </noscript>
+                        <a class="flex-card__header lazyload" href="https://serviceyear.org/search/listings/focus-areas;education-youth/recruitment-statuses;actively-recruiting/" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-3.png"></a>
+                        
+                        <div class="flex-card__description">
+                            <h3 class="flex-card__heading">
+                                <a href="https://serviceyear.org/search/listings/focus-areas;education-youth/recruitment-statuses;actively-recruiting/">Teach or Help Out in Schools</a>
+                            </h3>
+                            <p class="flex-card__text">Do you want to do a service year helping in schools? There are many opportunities that focus on education and youth across the country.</p>
+                            
+                            <a class="flex-card__link" href="https://serviceyear.org/search/listings/focus-areas;education-youth/recruitment-statuses;actively-recruiting/">See More &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-card">
+                    <div class="flex-card__inner">
+                        
+                        <noscript>
+                            <a class="flex-card__header" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/location;Austin,%20TX,%20USA;30.2671530,-97.7430608,40/" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-4.png)"></a>
+                        </noscript>
+                        <a class="flex-card__header lazyload" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/location;Austin,%20TX,%20USA;30.2671530,-97.7430608,40/" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-4.png"></a>
+                        
+                        <div class="flex-card__description">
+                            <h3 class="flex-card__heading">
+                                <a href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/location;Austin,%20TX,%20USA;30.2671530,-97.7430608,40/">Serve in Austin, TX</a>
+                            </h3>
+                            <p class="flex-card__text">Do a service year with AmeriCorps in Austin and you&#39;ll have the opportunity to explore a vibrant city while making an impact on the local community. Check out the diverse opportunities throughout Austin.</p>
+                            
+                            <a class="flex-card__link" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/location;Austin,%20TX,%20USA;30.2671530,-97.7430608,40/">See More &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-card">
+                    <div class="flex-card__inner">
+                        
+                        <noscript>
+                            <a class="flex-card__header" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/rewards;airbnb/" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-6.png)"></a>
+                        </noscript>
+                        <a class="flex-card__header lazyload" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/rewards;airbnb/" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-6.png"></a>
+                        
+                        <div class="flex-card__description">
+                            <h3 class="flex-card__heading">
+                                <a href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/rewards;airbnb/">Get help with Relocation</a>
+                            </h3>
+                            <p class="flex-card__text">Need help relocating to a new city for your service year? Check out these opportunities that provide Airbnb vouchers to help you get settled.</p>
+                            
+                            <a class="flex-card__link" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/rewards;airbnb/">See More &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex-card">
+                    <div class="flex-card__inner">
+                        
+                        <noscript>
+                            <a class="flex-card__header" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/education-levels;ged,high-school-graduate/" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-5.png)"></a>
+                        </noscript>
+                        <a class="flex-card__header lazyload" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/education-levels;ged,high-school-graduate/" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/collections/photocollection-5.png"></a>
+                        
+                        <div class="flex-card__description">
+                            <h3 class="flex-card__heading">
+                                <a href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/education-levels;ged,high-school-graduate/">Do a Gap Year</a>
+                            </h3>
+                            <p class="flex-card__text">Thinking about doing a gap year? You can do a service year during your gap year and get paid, gain skills, and make an impact.</p>
+                            
+                            <a class="flex-card__link" href="https://serviceyear.org/search/listings/recruitment-statuses;actively-recruiting/education-levels;associates-degree-aa,ged,high-school-graduate,less-than-high-school-completed,some-college,technical-a">See More &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="feature feature--secondary" id="sy-stories">
+    <div class="row">
+        <div class="columns mb2">
+            <h2 class="text-center">Service Year Stories</h2>
+            <p class="text-center mb0">Learn what it&rsquo;s like to complete a service year from actual corps members.</p>
+        </div>
+    </div>
+    <div class="row hide-for-no-js">
+        
+        <div class="columns">
+            <div class="avatar-slider mb2">
+                <div class="avatar-slider__inner glide" id="js-avatars-glide">
+                    <div class="glide__wrapper">
+                        <div class="glide__track">
+                            
+                            <div class="glide__slide">
+                                <noscript>
+                                    <div class="avatar-slider__avatar cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Stephen.jpg)">
+                                        <span class="show-for-sr">Stephen Wheadon</span>
+                                    </div>
+                                </noscript>
+                                <div class="avatar-slider__avatar cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Stephen.jpg">
+                                    <span class="show-for-sr">Stephen Wheadon</span>
+                                </div>
+                            </div>
+                            
+                            <div class="glide__slide">
+                                <noscript>
+                                    <div class="avatar-slider__avatar cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Corey.jpg)">
+                                        <span class="show-for-sr">Corey Benjamin</span>
+                                    </div>
+                                </noscript>
+                                <div class="avatar-slider__avatar cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Corey.jpg">
+                                    <span class="show-for-sr">Corey Benjamin</span>
+                                </div>
+                            </div>
+                            
+                            <div class="glide__slide">
+                                <noscript>
+                                    <div class="avatar-slider__avatar cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Taylor.jpg)">
+                                        <span class="show-for-sr">Taylor Dawn Hicks</span>
+                                    </div>
+                                </noscript>
+                                <div class="avatar-slider__avatar cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Taylor.jpg">
+                                    <span class="show-for-sr">Taylor Dawn Hicks</span>
+                                </div>
+                            </div>
+                            
+                            <div class="glide__slide">
+                                <noscript>
+                                    <div class="avatar-slider__avatar cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Katrina.jpg)">
+                                        <span class="show-for-sr">Katrina Bitanga</span>
+                                    </div>
+                                </noscript>
+                                <div class="avatar-slider__avatar cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Katrina.jpg">
+                                    <span class="show-for-sr">Katrina Bitanga</span>
+                                </div>
+                            </div>
+                            
+                            <div class="glide__slide">
+                                <noscript>
+                                    <div class="avatar-slider__avatar cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Brie.jpg)">
+                                        <span class="show-for-sr">Brie Gamer</span>
+                                    </div>
+                                </noscript>
+                                <div class="avatar-slider__avatar cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Avatar-Brie.jpg">
+                                    <span class="show-for-sr">Brie Gamer</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glide__arrows">
+                    <button class="glide__arrow prev" data-glide-dir="<" data-glide-trigger="#js-avatars-glide #js-stories-glide">
+                        <span class="icon icon-left-open"></span>
+                        <span class="show-for-sr">Previous</span>
+                    </button>
+                    <button class="glide__arrow next" data-glide-dir=">" data-glide-trigger="#js-avatars-glide #js-stories-glide">
+                        <span class="icon icon-arrow-right-alt"></span>
+                        <span class="show-for-sr">Next</span>
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class="columns medium-8 medium-centered large-11">
+            <div class="story-slider glide mb0" id="js-stories-glide">
+                <div class="glide__wrapper">
+                    <div class="glide__track">
+                        
+                        <div class="glide__slide">
+                            <div class="row story-slider__vcenter">
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__text">
+                                        <div class="text-center large-text-left">
+                                            <p class="story-slider__title mb0">
+                                                Stephen Wheadon
+                                            </p>
+                                            <p>City Year</p>
+                                        </div>
+                                        <blockquote class="story-slider__pullquote">
+                                            <p>&ldquo;This experience has changed my life in ways  I could have never imagined and I am forever grateful to have done a service year.&rdquo;</p>
+                                        </blockquote>
+                                        <p>I served in an under-resourced middle school to help get students on 
+track to graduation.The service year experience was challenging, 
+but knowing that I was making an impact on the lives of others made
+it so empowering.</p>
+                                    </div>
+                                </div>
+
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__media">
+                                        
+                                        <noscript>
+                                            <div class="story-slider__media-inner cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Video-Block-Stephen_2x.jpg)"></div>
+                                        </noscript>
+                                        <div class="story-slider__media-inner cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Video-Block-Stephen_2x.jpg"></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glide__slide">
+                            <div class="row story-slider__vcenter">
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__text">
+                                        <div class="text-center large-text-left">
+                                            <p class="story-slider__title mb0">
+                                                Corey Benjamin
+                                            </p>
+                                            <p>Public Allies</p>
+                                        </div>
+                                        <blockquote class="story-slider__pullquote">
+                                            <p>&ldquo;Service empowered me to realize that I--we--can make a real, large, and tangible  difference. We have the ability to be change agents in the world.&rdquo;</p>
+                                        </blockquote>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__media">
+                                        
+                                        <div class="story-slider__media-inner flex-video widescreen vimeo mb0">
+                                            <video src="https://player.vimeo.com/external/182139654.hd.mp4?s=fcebd5e05a9f667ca59cde23b9a3fa685136b0bf&amp;profile_id=174">
+                                                Your browser does not support the <code>video</code> element.
+                                            </video>
+                                            <button class="story-slider__play js-play">
+                                                <span class="show-for-sr">Play</span>
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glide__slide">
+                            <div class="row story-slider__vcenter">
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__text">
+                                        <div class="text-center large-text-left">
+                                            <p class="story-slider__title mb0">
+                                                Taylor Dawn Hicks
+                                            </p>
+                                            <p>Reading Partners</p>
+                                        </div>
+                                        <blockquote class="story-slider__pullquote">
+                                            <p>&ldquo;I am doing a service year because I wanted to positively impact someone in the community.&rdquo;</p>
+                                        </blockquote>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__media">
+                                        
+                                        <div class="story-slider__media-inner flex-video widescreen vimeo mb0">
+                                            <video src="https://player.vimeo.com/external/182139653.hd.mp4?s=a01d548f1eb46db503fabc8c79d8a3f478d0e256&amp;profile_id=174">
+                                                Your browser does not support the <code>video</code> element.
+                                            </video>
+                                            <button class="story-slider__play js-play">
+                                                <span class="show-for-sr">Play</span>
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glide__slide">
+                            <div class="row story-slider__vcenter">
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__text">
+                                        <div class="text-center large-text-left">
+                                            <p class="story-slider__title mb0">
+                                                Katrina Bitanga
+                                            </p>
+                                            <p>City Year</p>
+                                        </div>
+                                        <blockquote class="story-slider__pullquote">
+                                            <p>&ldquo;It is a great honor to serve and give back to the larger DC community. I am a firm  believer that no one individual can make it through life without being inherently tied  to others.&rdquo;</p>
+                                        </blockquote>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__media">
+                                        
+                                        <noscript>
+                                            <div class="story-slider__media-inner cover" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Video-Block-Katrina_2x.jpg)"></div>
+                                        </noscript>
+                                        <div class="story-slider__media-inner cover lazyload" data-bg="https://d4u83ieo3jbjg.cloudfront.net/media/content/stories/Video-Block-Katrina_2x.jpg"></div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="glide__slide">
+                            <div class="row story-slider__vcenter">
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__text">
+                                        <div class="text-center large-text-left">
+                                            <p class="story-slider__title mb0">
+                                                Brie Gamer
+                                            </p>
+                                            <p>Community HealthCorps</p>
+                                        </div>
+                                        <blockquote class="story-slider__pullquote">
+                                            <p>&ldquo;I would definitely encourage my friends to do a service year. I think that it&#39;s a great opportunity to take what you&#39;ve learned in school and apply to real world experience.&rdquo;</p>
+                                        </blockquote>
+                                        
+                                    </div>
+                                </div>
+
+                                <div class="columns large-6">
+                                    
+                                    <div class="story-slider__media">
+                                        
+                                        <div class="story-slider__media-inner flex-video widescreen vimeo mb0">
+                                            <video src="https://player.vimeo.com/external/182139577.hd.mp4?s=a2241deda44e38a28266c448a2067ceab5fb1518&amp;profile_id=174">
+                                                Your browser does not support the <code>video</code> element.
+                                            </video>
+                                            <button class="story-slider__play js-play">
+                                                <span class="show-for-sr">Play</span>
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="feature feature--secondary" id="sy-audience">
+    <div class="row">
+        <div class="columns mb2">
+            <h2 class="text-center">
+    Service Year Community
+
+</h2>
+        </div>
+        
+        <div class="columns medium-6 large-3">
+            <a class="community-card community-card--0 " href="http://about.serviceyear.org/#join" target="_blank" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/heros/jointhemovement.jpg);">
+                <div class="community-card__content">
+                    
+                    <h3 class="community-card__heading font-last-paradise antialiased">Join The Movement</h3>
+                    
+                    <p class="community-card__text">Passionate about service years? Join supporters across the country and take action to spread the word.</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="columns medium-6 large-3">
+            <a class="community-card community-card--1" href="http://about.serviceyear.org/higher_education" target="_blank" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/heros/highered.jpg);">
+                <div class="community-card__content">
+                    
+                    <h3 class="community-card__heading antialiased">
+                        <span class="font-last-paradise block">Service Year</span>
+                        <span class="block">+ Higher Ed</span>
+                    </h3>
+                    
+                    <p class="community-card__text">Find ways that higher education institutions can attract students, enliven education, and put grads on career pathways through service years.</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="columns medium-6 large-3">
+            <a class="community-card community-card--1" href="http://about.serviceyear.org/companies" target="_blank" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/heros/companies.jpg);">
+                <div class="community-card__content">
+                    
+                    <h3 class="community-card__heading antialiased">
+                        <span class="font-last-paradise block">Service Year</span>
+                        <span class="block">+ Companies</span>
+                    </h3>
+                    
+                    <p class="community-card__text">Companies are helping young adults to serve in a rich variety of ways. Find out how.</p>
+                </div>
+            </a>
+        </div>
+        
+        <div class="columns medium-6 large-3">
+            <a class="community-card community-card--1" href="http://about.serviceyear.org/places" target="_blank" style="background-image: url(https://d4u83ieo3jbjg.cloudfront.net/media/heros/places.jpg);">
+                <div class="community-card__content">
+                    
+                    <h3 class="community-card__heading antialiased">
+                        <span class="font-last-paradise block">Service Year</span>
+                        <span class="block">+ Places</span>
+                    </h3>
+                    
+                    <p class="community-card__text">Address local needs by expanding service year opportunities for young people in your community.</p>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+
+
+
+<section class="feature feature--secondary sponsors" id="sy-partners">
+    
+    
+    <div class="row sponsors__group">
+        <div class="columns large-2">
+            <p class="sponsors__heading">We are a Project Of</p>
+        </div>
+        <div class="columns medium-8 medium-offset-2 large-offset-1 end">
+            <div class="row">
+                <div class="clearfix">
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://www.aspeninstitute.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/aspen%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://www.aspeninstitute.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/aspen%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3 end">
+                        <noscript>
+                            <a href="https://bethechangeinc.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/bethechange%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="https://bethechangeinc.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/bethechange%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row sponsors__group">
+        <div class="columns large-2">
+            <p class="sponsors__heading">Our Lead Funders</p>
+        </div>
+        <div class="columns medium-8 medium-offset-2 large-offset-1 end">
+            <div class="row">
+                <div class="clearfix">
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://cisco.com/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/cisco%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://cisco.com/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/cisco%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3 end">
+                        <noscript>
+                            <a href="http://www.luminafoundation.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/lumina%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://www.luminafoundation.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/lumina%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row sponsors__group">
+        <div class="columns large-2">
+            <p class="sponsors__heading">Our Partners</p>
+        </div>
+        <div class="columns medium-8 medium-offset-2 large-offset-1 end">
+            <div class="row sponsors__slider js-sponsors-slider">
+                <div class="clearfix">
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://www.statecommissions.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/asc%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://www.statecommissions.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/asc%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://www.nationalservice.gov/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/CNCS-SY_homepage-logo.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://www.nationalservice.gov/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/CNCS-SY_homepage-logo.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://www.servicecorps.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/servicecorps%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://www.servicecorps.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/servicecorps%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://voicesforservice.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/vfns%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://voicesforservice.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/vfns%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                </div>
+                <div class="clearfix">
+                
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://buildingbridgescoalition.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/bbc%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://buildingbridgescoalition.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/bbc%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3">
+                        <noscript>
+                            <a href="http://compact.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/campus-compact%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="http://compact.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/campus-compact%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                    <div class="sponsor columns small-6 large-3 end">
+                        <noscript>
+                            <a href="https://www.corpsnetwork.org/">
+                                <img src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/corpsnetwork%402x.png" alt="" />
+                                <span class="show-for-sr"></span>
+                            </a>
+                        </noscript>
+                        <a target="_blank" href="https://www.corpsnetwork.org/">
+                            <img class="lazyload" data-src="https://d4u83ieo3jbjg.cloudfront.net/media/imageblocks/corpsnetwork%402x.png" alt="" />
+                            <span class="show-for-sr"></span>
+                        </a>
+                    </div>
+                
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+
+
+
+            </main>
+
+            
+            <footer class="footer hide-for-print" role="contentinfo">
+    <div class="row footer__navigation">
+        <div class="small-12 medium-4 columns">
+            <ul class="footer__list">
+                <li><span class="footer__label">Search</span></li>
+                <li><a class="footer__link" href="/search/positions/">Search Positions</a></li>
+                <li><a class="footer__link" href="/search/corps-members/">Search Corps Members</a></li>
+            </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <ul class="footer__list">
+                <li><span class="footer__label">About</span></li>
+                <li><a class="footer__link" href="/about/">Service Year</a></li>
+                <li><a class="footer__link" href="/serving/">Serving</a></li>
+                <li><a class="footer__link" href="/about/service-timeline/">The Service Timeline</a></li>
+                <li><a class="footer__link" href="/hosting/">Hosting a Service Year</a></li>
+            </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <ul class="footer__list">
+                <li><span class="footer__label">Resources</span></li>
+                <li><a class="footer__link" href="/resources/">Service Year Resources</a></li>
+                <li><a class="footer__link" href="https://s3.amazonaws.com/sy-resources/SY-FAQS.pdf" target="_blank">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="small-12 medium-4 columns">
+            <ul class="footer__list">
+                <li><span class="footer__label">Support Us</span></li>
+                <li><a class="footer__link" href="/support/">Donate Now</a></li>
+            </ul>
+        </div>
+        <div class="small-12 medium-4 columns end">
+            <ul class="footer__list">
+                <li><span class="footer__label">Contact</span></li>
+                <li><a class="footer__link" href="mailto:support@serviceyr.org">Contact Us</a></li>
+                <li><a class="footer__link" href="/resources/#Careers">Careers at Service Year</a></li>
+                <li><a class="footer__link js-subscribe" href="#" rel="nofollow">Subscribe to Updates</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small-12 columns">
+            <div class="footer__brand">
+
+                <div class="medium-6 columns">
+                    <a class="navigation__brand" href="/">
+                        <span class="show-for-sr">Service Year</span>
+                    </a>
+
+                </div>
+
+                <div class="medium-6 columns small-text-center medium-text-right">
+                    <div class="footer__social-links" itemscope itemtype="http://schema.org/Organization">
+                        <link itemprop="url" href="https://serviceyear.org">
+                        <a class="footer__icon" href="https://twitter.com/serviceyr" target="_blank" itemprop="sameAs">
+                            <span class="icon icon-social-twitter"></span>
+                            <span class="show-for-sr">Service Year on Twitter</span>
+                        </a>
+                        <a class="footer__icon" href="https://www.facebook.com/serviceyr" target="_blank" itemprop="sameAs">
+                            <span class="icon icon-social-facebook"></span>
+                            <span class="show-for-sr">Service Year on Facebook</span>
+                        </a>
+                        <a class="footer__icon" href="https://www.youtube.com/channel/UCYhLT627XLxvrqOFFpNNlCA" target="_blank" itemprop="sameAs">
+                            <span class="icon icon-social-youtube"></span>
+                            <span class="show-for-sr">Service Year on YouTube</span>
+                        </a>
+                        <a class="footer__icon" href="https://plus.google.com/u/0/100678000133411404907/" target="_blank" itemprop="sameAs">
+                            <span class="icon icon-social-google-plus"></span>
+                            <span class="show-for-sr">Service Year on Google+</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="medium-12 columns">
+                    <div class="small-only-text-center text-right">
+                        <a class="footer__link" href="https://s3.amazonaws.com/sy-resources/SY-TOS.pdf" target="_blank">
+                            <small>Terms of Service</small>
+                        </a>
+                        <a class="footer__link" href="https://s3.amazonaws.com/sy-resources/SY-PP.pdf" target="_blank">
+                            <small>Privacy Policy</small>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+            
+        </section>
+
+        <a class="exit-off-canvas"></a>
+    </div>
+</div>
+
+
+        
+        
+
+        
+
+
+
+        <script src="https://static.serviceyear.org/static/js/vendor_v2.fe3444b12442.js"></script>
+        <script src="https://static.serviceyear.org/static/js/app_v2.58ec7c4f78ce.js"></script>
+        
+<script>
+    (function() {
+        $('.search__input').on('input', function() {
+            $('.search__icon').removeClass('hidden-for-js');
+        });
+
+        $('.search__icon').on('touchstart click', function(ev) {
+            ev.preventDefault();
+            $(this).addClass('hidden-for-js');
+            $('.search__input').val('').change();
+        });
+    }());
+</script>
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ387yoRdni2lV--oV2ciMWTyp-8O4u_g&libraries=places"></script>
+
+<script>
+(function() {
+
+    //Google Places API services
+    var autocompleteService = new google.maps.places.AutocompleteService();
+    var placesService = new google.maps.places.PlacesService($('#listing-response').get(0));
+
+    var locationHorseyDisplay = _.template('<%= description %>');
+    var locationSearchInput = $('#id_location')[0];
+
+    // workaround for Android Chrome bug, see https://github.com/bevacqua/horsey/issues/36
+    // also submits the form elem on `Enter` with a valid location
+    var KEY_ENTER = 13;
+    var KEY_UP = 38;
+    var KEY_DOWN = 40;
+    var enterSubmit = false;
+    $('#id_location').keyup(function(e) {
+        if (!e.keyCode === KEY_UP && !e.keyCode === KEY_DOWN) {
+            horseyInstance.hide();
+            horseyInstance.show();
+        }
+
+        if (e.keyCode === KEY_ENTER) {
+            enterSubmit = true;
+        } else {
+            enterSubmit = false;
+        }
+    });
+
+    var horseyInstance = horsey(locationSearchInput, {
+        //The location_text is the place_id returned by getText
+        //used to call Google Places API
+        set: function(locationId) {
+            getLocationDetails(locationId);
+        },
+        //We set getText to place_id to be used in the set function
+        getText: function(suggestion) {
+            return suggestion.place_id;
+        },
+        renderItem: function(li, suggestion) {
+            li.innerHTML = locationHorseyDisplay(suggestion);
+        },
+        filter: function(q, suggestion) {
+            
+            var show =
+                
+            _.contains(suggestion.types, 'locality')
+                
+                    ||
+                
+            
+            _.contains(suggestion.types, 'street_address')
+                
+                    ||
+                
+            
+            _.contains(suggestion.types, 'administrative_area_level_1')
+                
+                    ||
+                
+            
+            _.contains(suggestion.types, 'postal_code')
+                
+                    ||
+                
+            
+            _.contains(suggestion.types, 'administrative_area_level_2')
+                
+                ;
+                
+            
+            return show;
+        },
+        source: function(value, done) {
+            var list = []
+
+            if (value.input && value.input.length) {
+                autocompleteService.getPlacePredictions({
+                    input: value.input,
+                    types: ['(regions)'],
+                    componentRestrictions: {
+                        country: 'us'
+                    },
+                }, function(predictions, status) {
+                    if (status === 'OK' && predictions.length) {
+                        list = predictions
+                    }
+
+                    done(null, [{
+                        list: list
+                    }])
+                });
+            } else {
+                done(null, [{
+                    list: list
+                }]);
+            }
+        },
+        noMatches: 'Sorry, we couldn\'t find any results.',
+        highlighter: false,
+        highlightCompleteWords: false,
+        debounce: 300,
+    });
+
+    //Get location geo information from Google API
+    function getLocationDetails(location_id) {
+        placesService.getDetails({
+            placeId: location_id
+        }, function(result, status) {
+            if (status === 'OK' && result) {
+                if (result.address_components[0].types[0] === 'administrative_area_level_1') {
+                    // It's a State -> Insert result into text field
+                    $('#id_location').val(result.address_components[0].long_name);
+                    // In case we had previous results, clear them
+                    $('#id_latitude').val('');
+                    $('#id_longitude').val('');
+                } else {
+                    // It's NOT a State -> let's go with lat / Long
+                    var lat = result.geometry.location.lat();
+                    var long = result.geometry.location.lng();
+
+                    if (result.types[0] === 'locality') {
+                        // remove zipcode from input for non-zipcode searches
+                        $('#id_location').val(result.formatted_address.replace(/ \d{5}/, ''));
+                    } else {
+                        $('#id_location').val(result.formatted_address);
+                    }
+
+                    $('#id_latitude').val(lat);
+                    $('#id_longitude').val(long);
+                }
+
+                if (enterSubmit) {
+                    $(locationSearchInput).closest('form').submit();
+                }
+            } else {
+                enterSubmit = false;
+            }
+        })
+    };
+
+    //Add Powered by Google logo
+    $('.sey-container').addClass('geo-autocomplete');
+
+    //Resize autocomplete
+    $(window).on('resize', function(e) {
+        setAutocompleteSize();
+    });
+
+    function setAutocompleteSize() {
+        $('.sey-container').css('width', $('#id_location').css('width'));
+    };
+
+    setAutocompleteSize();
+
+}());
+</script>
+
+
+<script>
+    $('.js-show-discovery, .js-dismiss-discovery').on('click', function(e) {
+        e.preventDefault();
+        $('.discovery-bar').toggleClass('discovery-bar--active');
+    });
+</script>
+
+
+<script>
+    (function() {
+        
+        $('.js-featured-collections-slider').slick({
+            arrows: true,
+            dots: false,
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            variableWidth: true,
+            mobileFirst: true,
+            responsive: [
+                {
+                    breakpoint: 640,
+                    settings: {
+                        centerMode: false,
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        centerMode: false,
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
+        });
+        
+
+        
+        var $storiesSlider = $('#js-stories-glide');
+
+        $storiesSlider.glide({
+            type: 'slider',
+            autoplay: false,
+            autoheight: true,
+            dragDistance: false,
+            touchDistance: false,
+            keyboard: false
+        });
+
+        var $avatarsSlider = $('#js-avatars-glide');
+
+        $avatarsSlider.glide({
+            type: 'slider',
+            autoplay: false,
+            paddings: Modernizr.mq('screen and (max-width: 46.3125em)') ? '34%' : '40%'
+        });
+
+        // sync sliders
+        $avatarsSlider.on('swipeEnd.glide, afterTransition.glide', function() {
+            var storiesSliderAPI = $storiesSlider.data('glide_api');
+            var avatarsSlideAPI = $avatarsSlider.data('glide_api');
+            storiesSliderAPI.go('=' + avatarsSlideAPI.current());
+        });
+        
+
+        // video plays in stories slider
+        $('.js-play').on('click', function(e) {
+            e.preventDefault();
+
+            var $play = $(this);
+            var $video = $play.prevAll('video');
+            $play.fadeOut();
+            $video[0].play();
+            $video.attr('controls', true);
+            $video.one('pause', function() {
+                $video.removeAttr('controls');
+                $play.fadeIn();
+            });
+        });
+
+        $('.js-sponsors-slider').slick({
+            infinite: false
+        });
+    }());
+</script>
+
+
+        <script>
+            
+            var NEWSLETTER_DISPLAY_COOKIE = 'sy:newsletter:modal:display';
+        </script>
+        
+        <script>
+            var displayNewsletterModal = !Cookies.get(NEWSLETTER_DISPLAY_COOKIE);
+        </script>
+        
+        <div id="js-newsletter-modal"></div>
+
+<script>
+    (function() {
+        var showModalTimer;
+        var modal;
+
+        var NewsletterModel = Backbone.Model.extend({
+            validation: {
+                'newsletter_email': {
+                    required: true,
+                    pattern: 'email'
+                }
+            }
+        });
+
+        var NewsletterView = sy.FormValidationView.extend({ });
+
+        function createModalFromTemplate(template) {
+            var NewsletterModal = Backbone.Modal.extend({
+                template: _.template(template),
+                viewContainer: '.bbm-modal__section',
+                submitEl: '.js-submit',
+                cancelEl: '.js-cancel',
+                onShow: function() {
+                    this.currentView = new NewsletterView({
+                        el: '#js-newsletter-form',
+                        model: new NewsletterModel()
+                    });
+
+                    // set cookie for not showing again
+                    Cookies.set(NEWSLETTER_DISPLAY_COOKIE, 'false', { expires: 2 });
+                },
+                onDestroy: function() {
+                    this.undelegateModalEvents(); // sets modal.active to false, see http://is.gd/AyqKt9
+                },
+                beforeSubmit: function() {
+                    var valid = this.currentView.checkValid('newsletter_email');
+                    if (!valid) {
+                        return false;
+                    }
+
+                    var $form = this.currentView.$el;
+                    $.post($form[0].action, $form.serialize())
+                    .done(function(data) {
+
+                        if (window.optimizely && $(data.html).attr('id') === 'sy-email-subscribe-success') {
+                           // sends a tracking call to Optimizely.
+                            window.optimizely.push(["trackEvent", "email_capture"]);
+                        }
+                        
+                        modal = createModalFromTemplate(data.html);
+                        $('#js-newsletter-modal').html(modal.render().el);
+                        dataLayer.push({
+                            'event' : 'formSubmitted',
+                            'formID': $(data.html).attr('id')
+                        });
+                    });
+                }
+            });
+
+            return new NewsletterModal({ });
+        }
+
+        function showEmailContactModal() {
+            $.get('/newsletters/')
+            .done(function(template) {
+                modal = createModalFromTemplate(template);
+                $('#js-newsletter-modal').html(modal.render().el);
+            });
+        }
+
+        function lazyShowModal() {
+            if (showModalTimer) {
+                clearTimeout(showModalTimer);
+            }
+
+            showModalTimer = setTimeout(function() {
+                // dont show modal if another modal is open
+                var $openModal = $('.bbm-modal');
+                if ($openModal.length === 0) {
+                    // don't show modal if any input has focus
+                    var $focusedInputs = $(document.activeElement).filter('input,select,textarea');
+                    if ($focusedInputs.length === 0) {
+                        showEmailContactModal();
+                    } else {
+                        // restart show modal timer once focused inputs are blurred
+                        $focusedInputs.on('blur', lazyShowModal);
+                    }
+                }// else {
+                    // on modal close
+                    // lazyShowModal();
+                // }
+            }, moment.duration(10, 'seconds'));
+        }
+
+        
+        if (displayNewsletterModal) {
+            lazyShowModal();
+        }
+        
+
+        // set click event for footer show
+        $('.js-subscribe').on('click', function(e) {
+            e.preventDefault();
+            if (!modal || !modal.active) {
+                if (showModalTimer) {
+                    clearTimeout(showModalTimer);
+                }
+
+                showEmailContactModal();
+            }
+        });
+    }());
+</script>
+
+
+        <script type="application/ld+json">
+            {
+                "@context": "http://schema.org",
+                "@type": "Organization",
+                "url": "https://serviceyear.org",
+                "logo": "https://static.serviceyear.org/static/images/service-year-logo.4cd5bf983d91.png"
+            }
+        </script>
+        <script>
+            
+            var gaSiteId = 'UA-56666668-3';
+
+            
+            var MTIProjectId = '951e92da-184e-477d-97bc-fd0818b0b067';
+            (function() {
+                var projectId=window.MTIProjectId;var mtiTracking=document.createElement('link');mtiTracking.type='text/css';mtiTracking.rel='stylesheet';mtiTracking.href=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/1.css?apiType=css&projectid='+projectId;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking);
+            })();
+        </script>
+
+        
+        
+<script src="https://cdn.ravenjs.com/3.3.0/raven.min.js"></script>
+<script>Raven.config('https://0b3aea942130412db0b774ab8deaad20@app.getsentry.com/61331').install()</script>
+
+        
+
+        
+<script>window.intercomSettings = {"app_id": "nv8t1fq7"};</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/nv8t1fq7';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+
+    </body>
+</html>

@@ -26,10 +26,19 @@ module.exports.run = function (worker) {
       socket.emit('job.message', message.data)
       done(null, message.data)
     })
+    // jobs.messages.on('completed', (job, message) => {
+    //   console.log('socket completed')
+    //   socket.emit('job.message', message)
+    // })
+    // jobs.process((message) => {
+    //   console.log('socket', message)
+    //   message.pid = process.pid
+    //   socket.emit('job.message', message)
+    // })
 
     socket.on('disconnect', function () {
       console.log('>> disconnected')
-      jobs.messages.removeListener('completed', emitJobMessage)
+      // jobs.messages.removeListener('completed', emitJobMessage)
     })
   })
 }

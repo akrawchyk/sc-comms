@@ -6,10 +6,13 @@ const router = express.Router()
 
 /* GET purify job */
 router.get('/jobs/:jobId', (req, res, next) => {
-  const context = {}
   // lookup job
+  // TODO save job transactions to a db
   const jobId = req.params.jobId
+
   jobs.queue.getJob(jobId).then((job) => {
+    const context = {}
+
     if (!job) {
       context.error = `No job with ${jobId} submitted`
     } else {
@@ -26,7 +29,7 @@ router.get('/jobs/:jobId', (req, res, next) => {
 
 /* POST new purify job */
 router.post('/new', (req, res, next) => {
-  function validateUrl() {
+  function validateUrl () {
     if (!req.body.url) {
       return ['URL is required']
     }
@@ -47,14 +50,14 @@ router.post('/new', (req, res, next) => {
   const errors = validateUrl()
 
   if (errors) {
-    console.log(errors)
     res.render('index.html', { errors })
   } else {
     // create new job from body response url
     const u = req.body.url
     const urlObj = url.parse(u)
+
     if (!urlObj.protcol) {
-      // assuming https
+      // assume https
       urlObj.protocol = 'https:'
     }
 

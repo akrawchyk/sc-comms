@@ -10,6 +10,10 @@ const messages = Queue(
   'queue', config.get('redisPort'), config.get('redisHost'))
 
 queue.process((job, done) => {
+  // TODO get validated url from job data
+  // purify the url
+  // report progress
+
   let count = 0
   const total = job.data.total
   const timer = setInterval(() => {
@@ -43,15 +47,26 @@ queue.on('failed', (job, err) => {
   messages.add({ job: job.jobId, status: 'failed' })
 })
 
-// FIXME bull docs say use process to receive messages:
-//       https://github.com/OptimalBits/bull#message-queue
-//       setup pub/sub or middleware to this function
+// messages.on('completed', (job, result) => {
+//   console.log('message', result)
+// })
+
+const processors = []
+
+// FIXME setup pub/sub or middleware to this function for message handling
 // messages.process((msg, done) => {
-//   // console.log('received message ', msg.data)
+//   console.log('received message ', msg.data)
+//   processors.map((p) => {
+//     p(msg.data)
+//   })
+//
 //   done(null, msg.data)
 // })
 
 module.exports = {
   queue,
-  messages
+  messages,
+  process (callback) {
+    processors.push(callback)
+  }
 }
